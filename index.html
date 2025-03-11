@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,16 +12,16 @@
   <script src="https://kit.fontawesome.com/314c9f462e.js"></script>
   <script src="./js/load.js" defer type="module"></script>
   <script src="./js/button.js" defer type="module"></script>
-  <title>Projet Film</title>
+  <title>Cinemax</title>
 </head>
 <body>
 <!-- Desktop nav -->
 <nav class="desktop-nav">
   <a href="index.html"><i class="fas fa-film"></i></a>
   <ul>
-    <li><a href="">Films</a></li>
+    <li><a href="">Tendances</a></li>
     <li><a href="">Séries</a></li>
-    <li><a href="">Populaires</a></li>
+    <li><a href="">Films</a></li>
   </ul>
 </nav>
 
@@ -38,9 +38,9 @@
   </div>
   <div class="mobile-nav-content" id="menu-nav">
     <ul>
-      <li><a href="#">Films</a></li>
+      <li><a href="#">Tendances</a></li>
       <li><a href="#">Séries</a></li>
-      <li><a href="#">Populaires</a></li>
+      <li><a href="#">Films</a></li>
     </ul>
   </div>
 </nav>
@@ -48,13 +48,13 @@
 <!-- Content -->
 
 <div class="search-container saveMe">
-  <input type="text" placeholder="Rechercher un film" />
+  <input type="text" placeholder="Rechercher un film / une série" />
   <button type="submit"><i class="fas fa-search"></i></button>
 </div>
 
 <div class="wrapper">
   <div class="tendances-container container">
-    <!--  Ici les films tendances -->
+    <!--  Ici les tendances -->
     <div class="title-filter" id="title-tendances">
       <h2>Tendances</h2>
       <button class="active" id="day">Aujourd'hui</button>
@@ -62,25 +62,25 @@
     </div>
     <div class="grid-tendances" id="tendances">
       <div class="movie">
-        <img src="img/popcorn.svg" alt="" />
+        <img src="img/filmatic.svg" alt="" />
         <div class="score"><p></p></div>
         <h5></h5>
         <p></p>
       </div>
       <div class="movie">
-        <img src="img/popcorn.svg" alt="" />
+        <img src="img/filmatic.svg" alt="" />
         <div class="score"><p></p></div>
         <h5></h5>
         <p></p>
       </div>
       <div class="movie">
-        <img src="img/popcorn.svg" alt="" />
+        <img src="img/filmatic.svg" alt="" />
         <div class="score"><p></p></div>
         <h5></h5>
         <p></p>
       </div>
       <div class="movie">
-        <img src="img/popcorn.svg" alt="" />
+        <img src="img/filmatic.svg" alt="" />
         <div class="score"><p></p></div>
         <h5></h5>
         <p></p>
@@ -91,34 +91,72 @@
 
 <div class="wrapper-pop">
   <div class="populaires-container container">
-    <!-- Ici les films/séries populaires-->
-    <div class="title-filter saveMe" id="title-category">
-      <h2>Séries TV</h2>
+    <!-- Ici les séries populaires-->
+    <div class="title-filter" id="title-category">
+      <h2>Séries</h2>
 
       <button class="active" id="top_rated">Mieux notées</button>
       <button id="popular">Populaires</button>
     </div>
     <div class="grid-tendances" id="populaires">
       <div class="movie">
-        <img src="img/popcorn.svg" alt="" />
+        <img src="img/filmatic.svg" alt="" />
         <div class="score"><p></p></div>
         <h5></h5>
         <p></p>
       </div>
       <div class="movie">
-        <img src="img/popcorn.svg" alt="" />
+        <img src="img/filmatic.svg" alt="" />
         <div class="score"><p></p></div>
         <h5></h5>
         <p></p>
       </div>
       <div class="movie">
-        <img src="img/popcorn.svg" alt="" />
+        <img src="img/filmatic.svg" alt="" />
         <div class="score"><p></p></div>
         <h5></h5>
         <p></p>
       </div>
       <div class="movie">
-        <img src="img/popcorn.svg" alt="" />
+        <img src="img/filmatic.svg" alt="" />
+        <div class="score"><p></p></div>
+        <h5></h5>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="tendances-container container">
+    <!-- Ici les films-->
+    <div class="title-filter" id="movie_title-category">
+      <h2>Films</h2>
+
+      <button class="active" id="movie_top_rated">Mieux notés</button>
+      <button id="movie_popular">Populaires</button>
+    </div>
+    <div class="grid-tendances" id="movies_populaires">
+      <div class="movie">
+        <img src="img/filmatic.svg" alt="" />
+        <div class="score"><p></p></div>
+        <h5></h5>
+        <p></p>
+      </div>
+      <div class="movie">
+        <img src="img/filmatic.svg" alt="" />
+        <div class="score"><p></p></div>
+        <h5></h5>
+        <p></p>
+      </div>
+      <div class="movie">
+        <img src="img/filmatic.svg" alt="" />
+        <div class="score"><p></p></div>
+        <h5></h5>
+        <p></p>
+      </div>
+      <div class="movie">
+        <img src="img/filmatic.svg" alt="" />
         <div class="score"><p></p></div>
         <h5></h5>
         <p></p>
