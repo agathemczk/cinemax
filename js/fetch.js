@@ -1,10 +1,9 @@
-import { token, key } from "./settings.js";
+import {token} from "./settings.js";
 import displayHome from "./displayHome.js";
 
 export class fetchFromAPI {
     static async fetch(path, container) {
         const url = `https://api.themoviedb.org/3/${path}?language=fr-FR`;
-        console.log("🔍 Vérification de l'URL :", url); // Ajout debug
 
         const options = {
             method: "GET",
@@ -19,18 +18,14 @@ export class fetchFromAPI {
             if (!res.ok) throw new Error(`Erreur HTTP: ${res.status}`);
 
             const json = await res.json();
-            console.log("📩 Réponse API :", json); // Debug pour voir le retour API
             displayHome(json, container);
         } catch (err) {
-            console.error("❌ Erreur lors de la récupération des données :", err);
         }
     }
 
     static async fetchTrending(timeWindow = "day") {
-        console.log("📡 Fetching Trending Movies & TV Shows...");
 
         try {
-            // Récupération des films tendances
             const moviesRes = await fetch(
                 `https://api.themoviedb.org/3/trending/movie/${timeWindow}?language=fr-FR`,
                 {
@@ -53,22 +48,41 @@ export class fetchFromAPI {
                 }
             );
             const tvShows = await tvRes.json();
-            displayHome({ results: [...movies.results, ...tvShows.results] }, "#tendances");
+            displayHome({results: [...movies.results, ...tvShows.results]}, "#tendances");
 
         } catch (err) {
-            console.error("❌ Erreur lors de la récupération des tendances :", err);
+            console.error("Erreur lors de la recherche :", err);
         }
     }
 
 
     static fetchTV(sortBy = "popular") {
-        console.log("📡 Fetching TV Shows...");
-        this.fetch(`tv/${sortBy}`, "#movies_populaires"); // Utilisation du paramètre
+        this.fetch(`tv/${sortBy}`, "#populaires");
     }
 
     static fetchMovie(sortBy = "popular") {
-        console.log("📡 Fetching Movies...");
-        this.fetch(`movie/${sortBy}`, "#populaires"); // Utilisation du paramètre
+        this.fetch(`movie/${sortBy}`, "#movies_populaires");
+    }
+
+
+    static async fetchSearch(query) {
+        console.log(`Recherche pour : ${query}`);
+        const url = `https://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(query)}&language=fr-FR`;
+
+        try {
+            const res = await fetch(url, {
+                method: "GET",
+                headers: {
+                    accept: "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (!res.ok) throw new Error(`Erreur HTTP: ${res.status}`);
+            const json = await res.json();
+            displayHome({results: json.results.slice(0, 12)}, "#search-results-container");
+        } catch (err) {
+            console.error("Erreur lors de la recherche :", err);
+        }
     }
 
 }

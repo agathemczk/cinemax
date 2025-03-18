@@ -8,12 +8,11 @@ function display(json, container) {
 
     const gridTendance = document.querySelector(container);
     if (!gridTendance) {
-        console.error(`❌ Conteneur ${container} introuvable`);
         return;
     }
 
-    json.results.slice(0, 4).forEach((film, index) => {
-        if (!gridTendance.children[index]) return; // Évite l'erreur si pas assez d'enfants
+    json.results.slice(0, 12).forEach((film, index) => {
+        if (!gridTendance.children[index]) return;
 
         gridTendance.children[index].innerHTML = `
         <img src="https://www.themoviedb.org/t/p/w500${
