@@ -6,14 +6,6 @@
     font-family: "Roboto"
 }
 
-.hide {
-    display: none;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 .wrapper {
     width: 100%;
     display: -webkit-box;
@@ -28,7 +20,7 @@ html {
     flex-direction: column;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: center
 }
 
 .container {
@@ -296,7 +288,6 @@ html {
     border: solid 2px #032541
 }
 
-
 .grid-tendances, .actors {
     margin-top: 30px;
     display: -webkit-box;
@@ -306,25 +297,24 @@ html {
     -ms-flex-pack: justify;
     justify-content: space-between;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    gap: 30px;
+    flex-wrap: wrap
 }
 
-.movie, .actors {
+.movie, .actor {
     margin-bottom: 20px;
     cursor: pointer;
     width: 220px;
     position: relative
 }
 
-.movie img, .actors img {
+.movie img, .actor img {
     -webkit-transition: all .3s;
     transition: all .3s;
     width: 220px;
     height: 330px
 }
 
-.movie .score, .actors .score {
+.movie .score, .actor .score {
     width: 235px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -334,7 +324,7 @@ html {
     justify-content: flex-end
 }
 
-.movie .score p, .actors .score p {
+.movie .score p, .actor .score p {
     margin-top: -40px;
     height: 50px;
     width: 50px;
@@ -355,29 +345,29 @@ html {
     box-shadow: rgba(0, 0, 0, .44) 0px 3px 8px
 }
 
-.movie h5, .actors h5 {
+.movie h5, .actor h5 {
     -webkit-transition: all .3s;
     transition: all .3s;
     color: #032541;
     font-size: 20px
 }
 
-.movie:hover img, .actors:hover img {
+.movie:hover img, .actor:hover img {
     -webkit-box-shadow: rgba(0, 0, 0, .55) 8px 8px 5px;
     box-shadow: rgba(0, 0, 0, .55) 8px 8px 5px
 }
 
-.movie:hover h5, .actors:hover h5 {
+.movie:hover h5, .actor:hover h5 {
     text-shadow: rgba(0, 0, 0, .15) 2px 2px 2px
 }
 
-.movie a, .actors a {
+.movie a, .actor a {
     display: block;
     text-decoration: none;
     color: #000
 }
 
-.movie .like, .actors .like {
+.movie .like, .actor .like {
     background-color: #032541;
     border-radius: 50px;
     border: 3px #e7e7e7 solid;
@@ -390,7 +380,6 @@ html {
     color: #e7e7e7
 }
 
-
 .wrapper-pop {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -400,6 +389,7 @@ html {
     justify-content: center;
     background-color: rgba(128, 128, 128, .192);
     padding-top: 30px;
+    margin-bottom: 30px
 }
 
 .focus-container {
@@ -419,6 +409,7 @@ html {
 .focus-container .banner {
     background-repeat: no-repeat;
     background-image: url("./../img/bg.png");
+    background-position: center;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -457,7 +448,6 @@ html {
     margin-bottom: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center
@@ -472,7 +462,7 @@ html {
     height: 63px;
     width: 63px;
     background-color: #032541;
-    border-radius: 50%;
+    border-radius: 50px;
     border: solid 2px #fff;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -490,20 +480,20 @@ html {
     margin-bottom: 20px
 }
 
-.focus-container .banner .casting {
+.focus-container .casting {
     width: 83%;
     max-width: 1380px;
     margin-top: 40px;
     margin-bottom: 100px
 }
 
-.focus-container .banner .casting h2 {
+.focus-container .casting h2 {
     margin-bottom: 40px;
     font-size: 36px;
     font-weight: 400
 }
 
-.focus-container .banner .casting .actors {
+.focus-container .casting.actors {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -515,17 +505,17 @@ html {
     gap: 30px
 }
 
-.focus-container .banner .casting .actors .actor {
+.focus-container .casting.actors .actor {
     margin-bottom: 30px
 }
 
-.focus-container .banner .casting .actors .actor img {
+.focus-container .casting.actors .actor img {
     -webkit-transition: all .3s;
     transition: all .3s;
     margin-bottom: 10px
 }
 
-.focus-container .banner .casting .actors .actor:hover img {
+.focus-container .casting.actors .actor:hover img {
     -webkit-box-shadow: rgba(0, 0, 0, .55) 8px 8px 5px;
     box-shadow: rgba(0, 0, 0, .55) 8px 8px 5px
 }
