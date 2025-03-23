@@ -57,6 +57,7 @@ searchButton.addEventListener("click", () => {
     addSearchResultsSection();
 });
 
+
 function addSearchResultsSection() {
     if (!document.querySelector("#search-results")) {
         const wrapper = document.createElement("div");
@@ -90,21 +91,33 @@ function addSearchResultsSection() {
         tendancesContainer.parentNode.insertBefore(wrapper, tendancesContainer);
 
         toggleSections('search-results');
+        const allWrappers = document.querySelectorAll('.section');
+        allWrappers.forEach((wrapper) => {
+            wrapper.classList.add('hide');
+        });
+
+        const searchContainer = document.querySelector('.search-container');
+        searchContainer.classList.remove('hide');
+
 
         document.querySelector("#close-search-results").addEventListener("click", () => {
             document.querySelector("#search-results").remove();
-            toggleSections('populaires');
+            toggleSections('show-all');
         });
+
     }
 }
 
 function toggleSections(sectionToShow) {
     const allSections = document.querySelectorAll('.section');
-    allSections.forEach((section) => {
-        if (section.id === sectionToShow) {
-            section.classList.remove('hide');
-        } else {
-            section.classList.add('hide');
-        }
-    });
+
+    if (sectionToShow === 'search-results') {
+        allSections.forEach((wrapper) => {
+            wrapper.classList.add('hide');
+        });
+    } else if (sectionToShow === 'show-all') {
+        allSections.forEach((wrapper) => {
+            wrapper.classList.remove('hide');
+        });
+    }
 }

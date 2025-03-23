@@ -51,7 +51,6 @@ async function fetchSearch(query) {
         });
         if (!res.ok) throw new Error(`Erreur HTTP: ${res.status}`);
         const json = await res.json();
-        console.log("Résultats de la recherche:", json.results);
         displayHome({results: json.results.slice(0, 12)}, "#search-results-container");
     } catch (err) {
         console.error("Erreur lors de la recherche :", err);
