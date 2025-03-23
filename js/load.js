@@ -1,5 +1,6 @@
-import { fetchFromAPI } from "./fetch.js";
+import {fetchMovie, fetchSearch, fetchTrending, fetchTV} from "./fetch.js";
 
-fetchFromAPI.fetchTrending("day");
-fetchFromAPI.fetchTV("top_rated");
-fetchFromAPI.fetchMovie("top_rated");
+fetchTrending("day");
+fetchTV("top_rated");
+fetchMovie("top_rated");
+fetchSearch();

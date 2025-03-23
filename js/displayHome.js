@@ -7,11 +7,14 @@ function display(json, container) {
     };
 
     const gridTendance = document.querySelector(container);
+
     if (!gridTendance) {
         return;
     }
 
-    json.results.slice(0, 12).forEach((film, index) => {
+    const filmsToDisplay = json.results.slice(0, 12);
+
+    filmsToDisplay.forEach((film, index) => {
         if (!gridTendance.children[index]) return;
 
         gridTendance.children[index].innerHTML = `
@@ -24,6 +27,10 @@ function display(json, container) {
             film.first_air_date ? film.first_air_date : film.release_date
         ).toLocaleDateString("fr-FR", options)}</p>
         `;
+
+        gridTendance.children[index].addEventListener("click", () => {
+            window.location.href = `/focus.html?type=${film.name ? "tv" : "movie"}&id=${film.id}`;
+        });
     });
 }
 
