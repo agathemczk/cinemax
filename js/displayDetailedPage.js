@@ -58,7 +58,7 @@ function displayDetailedView(json) {
 function displayCast(json) {
     console.log(json);
     const castContainer = document.querySelector(".actors");
-    for (let loopThroughCast = 0; loopThroughCast < 4; loopThroughCast++) {
+    for (let loopThroughCast = 0; loopThroughCast < 8; loopThroughCast++) {
         const cast = json.cast[loopThroughCast] ? json.cast[loopThroughCast] : json.crew[loopThroughCast];
         castContainer.innerHTML += `
         <div class="actor">

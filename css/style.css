@@ -298,16 +298,20 @@ html {
 
 
 .grid-tendances, .actors {
-    margin-top: 30px;
+    margin: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 80px;
+    justify-content: space-between;
+}
+
+.actors {
+    margin: 40px;
+    gap: 30px;
 }
 
 .movie, .actors {
@@ -545,6 +549,10 @@ footer p {
     margin-left: 30px
 }
 
+.focus-container .casting h2 {
+    margin: 20px
+}
+
 @media screen and (max-width: 1151px) {
     .search-container {
         background-position-y: -1px
@@ -674,7 +682,6 @@ footer p {
     .focus-container .casting .actors .actor span {
         font-size: 1.1em
     }
-
 }
 
 /*# sourceMappingURL=style.css.map */
