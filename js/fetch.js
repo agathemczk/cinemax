@@ -11,14 +11,17 @@ async function fetchAPI(path) {
         },
     };
 
-    const response = await fetch(url, options);
-    console.log(response);
-    if (!response.ok) {
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            window.location.href = "404.html";
+            return null;
+        }
+        const json = await response.json();
+        return json;
+    } catch (err) {
         window.location.href = "404.html";
-        return null;
     }
-    const json = await response.json();
-    return json;
 }
 
 async function fetchTrending(sortBy) {
@@ -38,7 +41,6 @@ async function fetchMovie(sortBy = "popular") {
 
 
 async function fetchSearch(query) {
-    console.log(`Recherche pour : ${query}`);
     const url = `https://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(query)}&language=fr-FR`;
 
     try {
@@ -57,4 +59,4 @@ async function fetchSearch(query) {
     }
 }
 
-export {fetchMovie, fetchTrending, fetchTV, fetchSearch};
+export {fetchMovie, fetchTrending, fetchTV, fetchSearch, fetchAPI};

@@ -307,13 +307,12 @@ html {
     justify-content: space-between;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 80px;
 }
 
 .movie, .actors {
     margin-bottom: 20px;
     cursor: pointer;
-    width: 220px;
     position: relative
 }
 
@@ -362,12 +361,12 @@ html {
     font-size: 20px
 }
 
-.movie:hover img, .actors:hover img {
+.movie:hover img, .actor:hover img {
     -webkit-box-shadow: rgba(0, 0, 0, .55) 8px 8px 5px;
     box-shadow: rgba(0, 0, 0, .55) 8px 8px 5px
 }
 
-.movie:hover h5, .actors:hover h5 {
+.movie:hover h5, .actor:hover h5 {
     text-shadow: rgba(0, 0, 0, .15) 2px 2px 2px
 }
 
@@ -675,6 +674,7 @@ footer p {
     .focus-container .casting .actors .actor span {
         font-size: 1.1em
     }
+
 }
 
 /*# sourceMappingURL=style.css.map */

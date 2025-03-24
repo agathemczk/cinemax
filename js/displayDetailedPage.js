@@ -12,9 +12,9 @@ function displayDetailedView(json) {
     if (totalRuntime) {
         const hours = Math.floor(totalRuntime / 60);
         const minutes = totalRuntime % 60;
-        runtime = `${hours}h ${minutes}m`;
+        runtime = `${hours}h${minutes}`;
     } else {
-        runtime = json.number_of_seasons + " saisons - " + json.number_of_episodes + " épisodes";
+        runtime = json.number_of_seasons + " saison(s) - " + json.number_of_episodes + " épisode(s)";
     }
     container.innerHTML = `
       <div class="banner" style="background-image: url('https://www.themoviedb.org/t/p/original${
